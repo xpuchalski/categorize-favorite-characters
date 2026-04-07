@@ -1,0 +1,324 @@
+:root{
+  --bg: #141414;
+  --text: #cfc8c2;
+  --edge: #343434;
+  --accent: coral;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+}
+
+.app {
+  padding: 2rem 1.5rem;
+}
+
+h1 {
+  text-align: center;
+  font-size: 2rem;
+  color: var(--accent);
+  margin-bottom: 0.4rem;
+  letter-spacing: 0.04em;
+}
+
+.hint {
+  text-align: center;
+  color: var(--text);
+  font-size: 0.875rem;
+  margin-bottom: 1.5rem;
+}
+
+.tabs {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.tab-btn {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--edge);
+  padding: 0.45rem 0.85rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.tab-btn.active {
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.tab-btn:hover {
+  background: var(--edge);
+}
+
+/* ── Table container ── */
+.table-wrapper {
+  overflow-x: auto;
+  border-radius: 8px;
+  border: 1px solid var(--edge);
+}
+
+table {
+  border-collapse: collapse;
+  width: max-content;
+  min-width: 100%;
+}
+
+/* ── Header ── */
+thead th {
+  background: var(--bg);
+  color: var(--accent)  ;
+  padding: 0.7rem 1rem;
+  text-align: left;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  border-bottom: 2px solid var(--edge);
+  border-right: 1px solid var(--edge);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+thead th:last-child {
+  border-right: none;
+}
+
+/* ── Body rows ── */
+tbody tr {
+  border-bottom: 1px solid var(--edge);
+  transition: background 0.1s;
+}
+
+tbody tr:hover {
+  background: var(--edge);
+}
+
+/* ── Data cell ── */
+.char-cell {
+  padding: 0.45rem 1rem;
+  cursor: pointer;
+  vertical-align: top;
+  min-width: 155px;
+  max-width: 200px;
+  border-right: 1px solid var(--edge);
+  transition: background 0.15s;
+  user-select: none;
+}
+
+.char-cell:last-child {
+  border-right: none;
+}
+
+.char-cell:hover {
+  background: var(--edge);
+}
+
+.char-cell.open {
+  background: var(--accent);
+}
+
+/* ── Character name text ── */
+.char-name {
+  display: block;
+  font-size: 0.875rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.char-color {
+  display: inline-block;
+  margin-top: 0.2rem;
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--text);
+  opacity: 0.78;
+}
+
+.char-cell.open .char-name {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* ── Image section below name ── */
+.char-image {
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+.char-image img {
+  width: 140px;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 2px solid var(--accent);
+  display: block;
+  margin: 0 auto;
+}
+
+.next-image-btn {
+  margin-top: 0.45rem;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+  padding: 0.3rem 0.45rem;
+  font-size: 0.7rem;
+  cursor: pointer;
+}
+
+.next-image-btn:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.loading-text {
+  color: var(--edge);
+  font-size: 0.78rem;
+  padding: 0.4rem 0;
+  animation: pulse 1.2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.35; }
+}
+
+.no-image {
+  color: var(--edge);
+  font-size: 0.75rem;
+  font-style: italic;
+  padding: 0.25rem 0;
+}
+
+.color-table {
+  min-width: 1200px;
+}
+
+.color-col-head {
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.color-cell {
+  min-width: 160px;
+  padding: 0.6rem;
+  border-right: 2px solid var(--edge);
+  border-bottom: 1px solid var(--edge);
+  vertical-align: top;
+}
+
+.color-name {
+  display: block;
+  font-size: 0.84rem;
+  color: var(--text);
+}
+
+.color-category {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.69rem;
+  opacity: 0.8;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+.color-black { border-color: #111 !important; background: rgba(17, 17, 17, 0.22); }
+.color-gray { border-color: #8a8a8a !important; background: rgba(138, 138, 138, 0.16); }
+.color-blue { border-color: #3b82f6 !important; background: rgba(59, 130, 246, 0.13); }
+.color-purple { border-color: #a855f7 !important; background: rgba(168, 85, 247, 0.13); }
+.color-green { border-color: #22c55e !important; background: rgba(34, 197, 94, 0.13); }
+.color-brown { border-color: #8b5e3c !important; background: rgba(139, 94, 60, 0.18); }
+.color-yellow { border-color: #eab308 !important; background: rgba(234, 179, 8, 0.15); }
+.color-orange { border-color: #f97316 !important; background: rgba(249, 115, 22, 0.14); }
+.color-red { border-color: #ef4444 !important; background: rgba(239, 68, 68, 0.13); }
+.color-pink { border-color: #ec4899 !important; background: rgba(236, 72, 153, 0.13); }
+.color-white { border-color: #d4d4d8 !important; background: rgba(212, 212, 216, 0.2); }
+
+.editor-panel {
+  border: 1px solid var(--edge);
+  border-radius: 8px;
+  padding: 1rem;
+  background: var(--bg);
+}
+
+.editor-panel textarea {
+  width: 100%;
+  min-height: 420px;
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--edge);
+  border-radius: 6px;
+  padding: 0.8rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
+  line-height: 1.35;
+}
+
+.editor-actions {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.editor-actions button {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--edge);
+  padding: 0.45rem 0.75rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.editor-actions button:disabled {
+  opacity: 0.45;
+  cursor: default;
+}
+
+.save-ok {
+  color: #3fb950;
+  font-size: 0.85rem;
+}
+
+.save-error {
+  color: #f85149;
+  font-size: 0.85rem;
+}
+
+/* ── Empty cell (column shorter than max rows) ── */
+.empty-cell {
+  background: var(--bg);
+  border-right: 1px solid var(--edge);
+}
+
+.empty-cell:last-child {
+  border-right: none;
+}
+
+/* ── Full-page status / error ── */
+.status {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-size: 1.1rem;
+  color: var(--edge);
+}
+
+.status.error {
+  color: #f85149;
+}
