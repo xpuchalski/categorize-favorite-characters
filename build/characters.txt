@@ -1,5 +1,314 @@
+umamusume
+matikanefukukitaru
+cheery
+orange
+:personality: optimistic
+:gender: female
+oguri cap
+gray
+:personality: stoic
+:gender: female
+haru urara
+pink
+:personality: energetic
+:gender: female
+bakushin
+pink
+:personality: loud
+:gender: female
+kitasan black
+black
+:personality: determined
+:gender: female
+hishi amazon
+blue
+:personality: fierce
+:gender: female
+nice nature
+red
+:personality: relaxed
+:gender: female
+fine motion
+white
+:personality: elegant
+:gender: female
+inari one
+purple
+:personality: proud
+:gender: female
+winning ticket
+green
+:personality: passionate
+:gender: female
+nakayama festa
+blue
+:personality: rebellious
+:gender: female
+chiyono o
+pink
+:personality: polite
+:gender: female
 
-series 
-character
-color
-:other:other
+arknights
+reed
+orange
+:personality: reserved
+:gender: female
+surtr
+red
+:personality: intense
+:gender: female
+mudrock
+white
+:personality: calm
+:gender: female
+blue poison
+blue
+:personality: quiet
+:gender: female
+glaucus
+blue
+:personality: curious
+:gender: female
+mayer
+orange
+:personality: inventive
+:gender: female
+absinthe
+gray
+:personality: shy
+:gender: female
+amiya
+blue
+:personality: earnest
+:gender: female
+exusiai
+red
+:personality: upbeat
+:gender: female
+saria
+orange
+:personality: disciplined
+:gender: female
+gravel
+pink
+:personality: playful
+:gender: female
+frostleaf
+red
+:personality: composed
+:gender: female
+
+girls frontline
+hk416
+blue
+:personality: tsundere
+:gender: female
+ak12
+gray
+:personality: cool
+:gender: female
+m4a1
+green
+:personality: thoughtful
+:gender: female
+wa2000
+red
+:personality: proud
+:gender: female
+ro635
+yellow
+:personality: loyal
+:gender: female
+hatsuchiri (project neural cloud)
+orange
+:personality: witty
+:gender: female
+choco/fnc (project neural cloud)
+brown
+:personality: sweet
+:gender: female
+croque (project neural cloud)
+green
+:personality: responsible
+:gender: female
+
+blue archive
+kayoko onikata
+black
+:personality: cool
+:gender: female
+toki asumi
+blue
+:personality: stoic
+:gender: female
+aru rikuhachima
+pink
+:personality: dramatic
+:gender: female
+saori
+blue
+:personality: stoic
+:gender: female
+wakamo
+red
+:personality: yandere
+:gender: female
+akari
+red
+:personality: peaceful
+:gender: female
+
+fate grand order
+hassan of the serenity
+purple
+:personality: gentle
+:gender: female
+altria (saber alter / artoria pendragon alter)
+red
+:personality: stern
+:gender: female
+old man of the mountain
+black
+:personality: severe
+:gender: male
+bazett
+red
+:personality: direct
+:gender: female
+uesugi kenshin
+white
+:personality: noble
+:gender: female
+
+morimens
+nautila
+orange
+:personality: curious
+:gender: female
+winkle
+red
+:personality: lively
+:gender: female
+thais
+brown
+:personality: serious
+:gender: female
+
+overwatch
+mei
+blue
+:personality: kind
+:gender: female
+d.va 
+pink
+:personality: confident
+:gender: female
+kiriko
+red
+:personality: playful
+:gender: female
+
+battlecats
+kasli
+gray
+:personality: mysterious
+:gender: female
+gameron
+pink
+:personality: stubborn
+:gender: male
+kalisa
+purple
+:personality: bold
+:gender: female
+
+king god castle
+shelda
+blue
+:personality: steady
+:gender: female
+chung ah
+green
+:personality: strategic
+:gender: female
+
+pokemon
+bianca
+orange
+:personality: cheerful
+:gender: female
+zinnia
+red
+:personality: wild
+:gender: female
+marnie
+black
+:personality: reserved
+:gender: female
+bea
+orange
+:personality: disciplined
+:gender: female
+courtney
+red
+:personality: intense
+:gender: female
+delinquent (pokemon oras)
+yellow
+:personality: rough
+:gender: female
+acerola
+purple
+:personality: spooky
+:gender: female
+
+animes
+nami
+orange
+:personality: clever
+:gender: female
+gohan
+purple
+:personality: earnest
+:gender: male
+piccolo
+green
+:personality: stern
+:gender: male
+
+fighting games
+kohaku
+red
+:personality: mischievous
+:gender: female
+ramlethal valentine
+green
+:personality: stoic
+:gender: female
+juri han
+purple
+:personality: chaotic
+:gender: female
+makoto
+white
+:personality: straightforward
+:gender: female
+bullet (blazblue)
+brown
+:personality: intense
+:gender: female
+linne (under night inbirth)
+yellow
+:personality: mature
+:gender: female
+
+other 
+subaru oozora
+yellow
+xinyan
+red
+burnice
+red
+blizzaria
+blue

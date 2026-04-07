@@ -1,5 +1,0 @@
-
-series 
-character
-color
-:other:other
