@@ -16,10 +16,21 @@ Cloudflare will automatically use functions in functions/api for:
 - /api/characters
 - /api/image-search
 
+## Enable live saving with Cloudflare KV
+
+1. In Cloudflare dashboard, open your Pages project.
+2. Go to Settings -> Functions -> KV namespace bindings.
+3. Add binding:
+   - Variable name: CHARACTERS_KV
+   - KV namespace: create/select one namespace for this project
+4. Redeploy the project.
+
+After this, the Save button writes to KV via PUT /api/characters.
+
 ## Notes
 
-- Editing and saving characters.txt from the deployed site is read-only and returns a clear message.
-- To update data, edit characters.txt in Git and redeploy.
+- If KV is not configured, GET /api/characters falls back to public/characters.txt.
+- After KV is configured, GET/PUT /api/characters use KV storage.
 - SPA routing fallback is handled by public/_redirects.
 
 ## Local development
