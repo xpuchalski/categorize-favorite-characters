@@ -1,8 +1,0 @@
-name = "character-categorization"
-compatibility_date = "2026-04-07"
-pages_build_output_dir = "build"
-
-[[kv_namespaces]]
-binding = "CHARACTERS_KV"
-id = "REPLACE_WITH_PRODUCTION_KV_NAMESPACE_ID"
-preview_id = "REPLACE_WITH_PREVIEW_KV_NAMESPACE_ID"
