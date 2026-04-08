@@ -2,6 +2,26 @@ import React, { useState, useEffect } from 'react';
 import './App.css';
 
 const COLOR_COLUMNS = ['black', 'gray', 'blue', 'purple', 'green', 'brown', 'yellow', 'orange', 'red', 'pink', 'white'];
+const LOCAL_STORAGE_KEY = 'character_gallery_characters_txt';
+
+function getStoredCharactersText() {
+  try {
+    const stored = window.localStorage.getItem(LOCAL_STORAGE_KEY);
+    return typeof stored === 'string' ? stored : null;
+  } catch {
+    return null;
+  }
+}
+
+function setStoredCharactersText(text) {
+  window.localStorage.setItem(LOCAL_STORAGE_KEY, text);
+}
+
+async function getDefaultCharactersText() {
+  const res = await fetch('/characters.txt');
+  if (!res.ok) throw new Error(`Could not load characters.txt (${res.status})`);
+  return res.text();
+}
 
 function normalizeColor(value) {
   const normalized = (value || '').trim().toLowerCase();
@@ -186,25 +206,22 @@ export default function App() {
   const [loading, setLoading] = useState(true);
   const [saveStatus, setSaveStatus] = useState('idle');
 
-  const loadCharacters = () => {
+  const loadCharacters = async () => {
     setLoading(true);
     setError(null);
 
-    return fetch('/api/characters')
-      .then(res => {
-        if (!res.ok) throw new Error(`Could not load characters.txt (${res.status})`);
-        return res.text();
-      })
-      .then(text => {
-        setRawText(text);
-        setEditorText(text);
-        setColumns(parseCharactersTxt(text));
-        setLoading(false);
-      })
-      .catch(e => {
-        setError(e.message);
-        setLoading(false);
-      });
+    try {
+      const stored = getStoredCharactersText();
+      const text = stored !== null ? stored : await getDefaultCharactersText();
+
+      setRawText(text);
+      setEditorText(text);
+      setColumns(parseCharactersTxt(text));
+      setLoading(false);
+    } catch (e) {
+      setError(e.message);
+      setLoading(false);
+    }
   };
 
   useEffect(() => {
@@ -215,23 +232,7 @@ export default function App() {
     setSaveStatus('saving');
     setSaveErrorMessage('');
     try {
-      const res = await fetch('/api/characters', {
-        method: 'PUT',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ content: editorText }),
-      });
-
-      if (!res.ok) {
-        const body = await res.text().catch(() => '');
-        let message = body || `Save failed (${res.status})`;
-        try {
-          const parsed = JSON.parse(body);
-          if (parsed?.error) message = parsed.error;
-        } catch {
-          // Keep plain text message.
-        }
-        throw new Error(message);
-      }
+      setStoredCharactersText(editorText);
 
       setRawText(editorText);
       setColumns(parseCharactersTxt(editorText));
@@ -404,7 +405,7 @@ export default function App() {
               {saveStatus === 'saving' ? 'Saving...' : 'Save chars.txt'}
             </button>
             <button type="button" onClick={loadCharacters}>
-              Reload from disk
+              Reload saved copy
             </button>
             <button type="button" onClick={handleDownload}>
               Download characters.txt
