@@ -295,7 +295,20 @@ export default function App() {
   return (
     <div className="app">
       <h1>Character Gallery</h1>
-      <p className="hint">Color is the line below each character. Add custom tags as :key:value lines (example: :personality: calm, :gender: female) to create new pages. Other line formats are ignored as tags.</p>
+      <p className="hint">
+        This website is desisgned to help you display and categorize your favorite characters from your favorite series. With an infinite amount of customization options.
+        <br />
+        The format goes as follows :
+        <br />
+        - Each column is separated by a blank line. The first line of each column is the column name.
+        <br />
+        - Under each column, list character names from that series. 
+        <br />
+        - Under each character, the first plain color line is treated as the character's color.
+        <br />
+        - Additional metadata can be added as :key:value pairs under each character (:personality:stern).
+        <br />
+      </p>
 
       <div className="tabs">
         <button
